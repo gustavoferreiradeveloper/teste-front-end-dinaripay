@@ -1,0 +1,60 @@
+body{
+    padding-top: 10px;
+    background: #cbd9ea;
+}
+
+.card{
+    box-shadow: 3px 6px 8px 3px #6464644d;
+}
+
+h1{
+    font-size: 3em;
+}
+
+form, .alert{
+    margin-bottom: 0;
+}
+
+.form-group, .genre{
+    margin-top: 5px;
+}
+
+.largura{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flex-row{
+    display: flex;
+}
+
+.genre-man{
+    margin-left: 10px;
+}
+
+.genre-woman{
+    margin-left: 20px;
+}
+
+.align-box{
+    margin-top: 15px;
+}
+
+.form-check-input{
+    cursor: pointer;
+}
+
+button{
+    margin-left: 20px;
+}
+
+span{
+    font-weight: bolder;
+}
+
+iframe{
+    width: 100%;
+    height: 534px;
+}

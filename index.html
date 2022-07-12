@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
     <title>Cadastro</title>
   </head>
   <body>
@@ -11,135 +12,124 @@
       <div class="row">
         <div class="col-6">
           <div class="card">
-            <h1>Cadastre-se</h1>
-            <p>Preencha suas informações</p>
+            <div class="card-body">
+              <h1>Cadastre-se</h1>
+              <form id="form-cadastro">
+                <div class="alert alert-danger mt-2 d-none">
+                  Formulário incompleto, Por favor preencha o campo
+                  <span id="campo-erro"></span>!
+                </div>
+                <div class="form-group">
+                  <label for="nome">Nome:</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="nome"
+                    id="nome"
+                    placeholder="Digite seu nome completo..."
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">E-mail:</label>
+                  <input
+                    class="form-control"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Digite seu e-mail (nome@domínio.com.br)"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="cpf">CPF:</label>
+                  <input
+                    class="form-control"
+                    type="number"
+                    name="cpf"
+                    id="cpf"
+                    placeholder="Digite seu CPF (Apenas números)"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="nascimento">Data de Nascimento:</label>
+                  <input
+                    class="form-control"
+                    type="date"
+                    name="nascimento"
+                    id="birth"
+                  />
+                </div>
+                <div class="flex-row">
+                  <label class="genre" for="genre">Gênero:</label>
+                  <div class="form-group form-check genre-man">
+                    <label for="genre">Homem</label>
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="genre"
+                      id="genre"
+                    />
+                  </div>
 
-            <form>
-              <div class="alert alert-danger mt-2 d-none">
-                Preencha o campo todo FILHO DA PUTA!!!
-              </div>
-              <div class="form-group">
-                <label for="nome">Nome:</label>
-
-                <input
-                  class="form-control"
-                  type="text"
-                  name="nome"
-                  id="nome"
-                  placeholder="Digite seu nome..."
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="sobrenome">Sobrenome:</label>
-                <input
-                  class="form-control"
-                  type="text"
-                  name="sobrenome"
-                  id="sobrenome"
-                  placeholder="Digite seu sobrenome..."
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="email">E-mail:</label>
-                <input
-                  class="form-control"
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Digite seu e-mail (nome@domínio.com.br)"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="cpf">CPF:</label>
-                <input
-                  class="form-control"
-                  type="number"
-                  name="cpf"
-                  id="cpf"
-                  placeholder="Digite seu CPF (Apenas números)"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="nascimento">Data de Nascimento:</label>
-                <input
-                  class="form-control"
-                  type="date"
-                  name="nascimento"
-                  id="nascimento"
-                />
-              </div>
-
-              <div class="form-group form-check">
-                <label for="genero">Homem</label>
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="genero"
-                  id="genero"
-                />
-              </div>
-              <div class="form-group form-check">
-                <label for="genero">Mulher</label>
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="genero"
-                  id="genero"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="senha">Senha:</label>
-                <input
-                  class="form-control"
-                  type="password"
-                  name="senha"
-                  id="senha"
-                  placeholder="Digite sua senha..."
-                />
-              </div>
-              <div class="form-group">
-                <label for="senha">Repita a Senha:</label>
-                <input
-                  class="form-control"
-                  type="password"
-                  name="senha"
-                  id="senha"
-                  placeholder="Repita sua senha..."
-                />
-              </div>
-
-              <div class="form-group d-flex justify-content-evenly mt-2">
-                <button
-                  type="submit"
-                  class="btn btn-outline-secondary"
-                  onclick="Enviar()"
-                >
-                  CANCELAR
-                </button>
-                <button
-                  type="submit"
-                  class="btn btn-outline-primary"
-                  onclick="Enviar()"
-                >
-                  CADASTRAR
-                </button>
-              </div>
-            </form>
+                  <div class="form-group form-check genre-woman">
+                    <label for="genre">Mulher</label>
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="genre"
+                      id="genre"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="password">Senha:</label>
+                  <input
+                    class="form-control"
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Digite sua senha..."
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="repeat-password">Repita a Senha:</label>
+                  <input
+                    class="form-control"
+                    type="password"
+                    name="repeat-password"
+                    id="repeat-password"
+                    placeholder="Repita sua senha..."
+                  />
+                </div>
+                <div class="form-group d-flex justify-content-evenly mt-2">
+                  <button type="submit" class="btn btn-outline-secondary">
+                    CANCELAR
+                  </button>
+                  <button type="submit" class="btn btn-outline-primary">
+                    CADASTRAR
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
         <div class="col-6">
-          <h1>Coluna 02</h1>
-          <p style="color: red">Área de validação</p>
+          <div class="card">
+            <div class="card-body">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58555.39384043162!2d-46.56998647666151!3d-23.470846659173077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef55093f8d0c7%3A0x80c9c3041b207fe2!2sDinariPay%20Pagamentos!5e0!3m2!1spt-BR!2sbr!4v1657659258992!5m2!1spt-BR!2sbr"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <script src="assets/js/jquery-3.6.0.slim.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/form.js"></script>
   </body>
 </html>
