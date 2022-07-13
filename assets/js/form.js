@@ -1,8 +1,12 @@
+$(document).ready(function(){
+    $(cpf).mask("999.999.999-99");
+})
+
 $('#form-cadastro').submit(function (){
-    var nome = $('#nome');
+    var name = $('#name');
     var email = $('#email');
     var cpf = $('#cpf');
-    var birth = $('#birth');
+    var birthDate = $('#birthDate');
     var genre = $('#genre');
     var password = $('#password');
     var repeatPassword = $('#repeat-password');
@@ -11,13 +15,13 @@ $('#form-cadastro').submit(function (){
     var campo = $('#campo-erro')
 
     erro.addClass('d-none');
-    $('.is-invalid').removeClass('is-invalid')
+    $('.is-invalid').removeClass('is-invalid') 
 
-    if(nome.val() == ''){
+    if(name.val() == ''){
         erro.removeClass('d-none');
         campo.html('nome');
-        nome.focus();
-        nome.addClass('is-invalid');
+        name.focus();
+        name.addClass('is-invalid');
 
         return false;
     }
@@ -29,55 +33,64 @@ $('#form-cadastro').submit(function (){
         email.addClass('is-invalid');
 
         return false;
-    }
-
-    //Procurar como validar CPF
-    if(cpf.val() == ''){
+    }   
+        
+    if(cpf.val() == '' || cpf.val().length != 14){
         erro.removeClass('d-none');
         campo.html('cpf');
         cpf.focus();
         cpf.addClass('is-invalid');
-
-        return false;
+    
+            return false;
     }
-
-    if(birth.val() == ''){
+        
+    if(birthDate.val() == ''){
         erro.removeClass('d-none');
-        campo.html('birth');
-        birth.focus();
-        birth.addClass('is-invalid');
+        campo.html('Nascimento');
+        birthDate.focus();
+        birthDate.addClass('is-invalid');
 
         return false;
     }
 
-    //Procurar como validar gênero
     if(genre.val() == ''){
         erro.removeClass('d-none');
-        campo.html('genre');
+        campo.html('gênero');
         genre.focus();
         genre.addClass('is-invalid');
 
         return false;
     }   
 
-    //Procurar como validar senha e se ambas são iguais
-    if(password .val() == ''){
+    if(password.val() == ''){
         erro.removeClass('d-none');
-        campo.html('password ');
+        campo.html('senha');
         password.focus();
         password.addClass('is-invalid');
 
         return false;
     }
 
-    if(repeatPassword .val() == ''){
+    if(repeatPassword.val() == ''){
         erro.removeClass('d-none');
-        campo.html('repeatPassword ');
-        repeatPassword .focus();
-        repeatPassword .addClass('is-invalid');
+        campo.html('repetir a senha ');
+        repeatPassword.focus();
+        repeatPassword.addClass('is-invalid');
 
         return false;
     }
 
+    if (password.val() != repeatPassword.val()){
+        erro.removeClass('d-none');
+        campo.html('Senha e Repetir a Senha igualmente');
+        repeatPassword.focus();
+        repeatPassword.addClass('is-invalid');
+        
+        return false
+    }
+    alert('Cadastro enviado com sucesso!')
     return true;
+
 });
+
+$('#form-cadastro').get(0).reset();
